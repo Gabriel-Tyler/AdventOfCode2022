@@ -2,7 +2,7 @@
  * Gabriel Tyler
  * Advent of code 2022 
  * Day 3 part 2
- * Answer: 
+ * Answer: 2838
  */
 
 #include <iostream>
@@ -16,44 +16,58 @@ using ll = long long;
 
 void solve()
 {
-    bool left[52];
-    forn(i, 52)
-        left[i] = false;
+    bool counts[3][52];
+    forn(i, 3)
+    {
+        forn(j, 52)
+        {
+            counts[i][j] = false;
+        }
+    }
+
     ll sum = 0;
     string line;
-    while (getline(cin, line) && !line.empty())
+    while (true)
     {
-        int n = line.size();
-        // add left side of line to array
-        for (int i = 0; i < n/2; ++i)
+        // loop through three lines and count the chars 
+        forn(i, 3)
         {
-            char c = line[i];
-            int j = -1;
-            if (islower(c))
-                j = c-'a';
-            else if (isupper(c))
-                j = c-'A'+26;
-            if (j > 0)
-                left[j] = true;
-        }
-        // if a char is present in the right side, add priority to sum
-        for (int i = n/2; i < n; ++i)
-        {
-            char c = line[i];
-            int j = -1;
-            if (islower(c))
-                j = c-'a';
-            else if (isupper(c))
-                j = c-'A'+26;
-            if (j > 0 && left[j])
+            getline(cin, line);
+            if (line.empty())
+                break;
+            for (char c : line)
             {
-                sum += j+1;
+                int j = -1;
+                if (islower(c))
+                    j = c-'a';
+                if (isupper(c))
+                    j = c-'A'+26;
+                if (j > 0 && j < 52)
+                    counts[i][j] = true;
+            }
+        }
+
+        if (line.empty())
+            break;
+
+        // check which char is in all three lines
+        forn(i, 52)
+        {
+            if (counts[0][i] && counts[1][i] && counts[2][i])
+            {
+                sum += i+1;
                 break;
             }
         }
-        // clear left array
-        forn(i, 52)
-            left[i] = false;
+
+        // clear
+        forn(i, 3)
+        {
+            forn(j, 52)
+            {
+                counts[i][j] = false;
+            }
+        }
     }
     cout << sum << '\n';
 }
