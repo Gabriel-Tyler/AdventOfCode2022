@@ -1,7 +1,7 @@
 /**
  * Gabriel Tyler
  * Advent of code 2022 
- * Day 2 part 1
+ * Day 2 part 2
  * Answer: 12424
  */
 
