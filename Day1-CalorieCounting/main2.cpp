@@ -1,8 +1,8 @@
 /**
  * Gabriel Tyler
  * Advent of Code 2022
- * Day 1 part 1
- * Answer: 64929
+ * Day 1 part 2
+ * Answer: 
  */
 
 #include <iostream>
