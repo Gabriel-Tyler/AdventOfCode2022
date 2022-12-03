@@ -42,7 +42,7 @@ void solve()
                     j = c-'a';
                 if (isupper(c))
                     j = c-'A'+26;
-                if (j > 0 && j < 52)
+                if (j >= 0 && j < 52)
                     flags[i][j] = true;
             }
         }

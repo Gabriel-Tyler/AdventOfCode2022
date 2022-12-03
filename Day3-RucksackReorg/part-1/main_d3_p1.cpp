@@ -33,7 +33,7 @@ void solve()
                 j = c-'a';
             else if (isupper(c))
                 j = c-'A'+26;
-            if (j > 0)
+            if (j >= 0)
                 left[j] = true;
         }
         // if a char is present in the right side, add priority to sum
@@ -45,7 +45,7 @@ void solve()
                 j = c-'a';
             else if (isupper(c))
                 j = c-'A'+26;
-            if (j > 0 && left[j])
+            if (j >= 0 && left[j])
             {
                 sum += j+1;
                 break;
