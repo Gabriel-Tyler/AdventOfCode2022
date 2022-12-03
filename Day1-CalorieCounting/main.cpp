@@ -5,7 +5,6 @@
  * Answer to input: 64929
  */
 
-
 #include <iostream>
 #include <string>
 #include <climits> // LLONG_MAX, LLONG_MIN
