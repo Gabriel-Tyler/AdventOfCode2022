@@ -1,8 +1,9 @@
 /**
  * Gabriel Tyler
- * Advent of Code
+ * Advent of Code 2022
  * Day 1
- * Answer to input: 64929
+ * Answer to p1: 64929
+ * Answer to p2: 
  */
 
 #include <iostream>
