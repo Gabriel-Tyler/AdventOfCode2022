@@ -16,12 +16,12 @@ using ll = long long;
 
 void solve()
 {
-    bool counts[3][52];
+    bool flags[3][52];
     forn(i, 3)
     {
         forn(j, 52)
         {
-            counts[i][j] = false;
+            flags[i][j] = false;
         }
     }
 
@@ -29,7 +29,7 @@ void solve()
     string line;
     while (true)
     {
-        // loop through three lines and count the chars 
+        // loop through three lines and flag the chars 
         forn(i, 3)
         {
             getline(cin, line);
@@ -43,7 +43,7 @@ void solve()
                 if (isupper(c))
                     j = c-'A'+26;
                 if (j > 0 && j < 52)
-                    counts[i][j] = true;
+                    flags[i][j] = true;
             }
         }
 
@@ -53,7 +53,7 @@ void solve()
         // check which char is in all three lines
         forn(i, 52)
         {
-            if (counts[0][i] && counts[1][i] && counts[2][i])
+            if (flags[0][i] && flags[1][i] && flags[2][i])
             {
                 sum += i+1;
                 break;
@@ -65,7 +65,7 @@ void solve()
         {
             forn(j, 52)
             {
-                counts[i][j] = false;
+                flags[i][j] = false;
             }
         }
     }
