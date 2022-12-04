@@ -22,18 +22,10 @@ void solve()
         /* C */ {2, 6, 7}
     };
 
-    int num_empty_lines = 0;
     string s;
     ll total = 0;
-    while (num_empty_lines < 2 && getline(cin, s))
+    while (getline(cin, s) && s.size() == 3)
     {
-        if (s.size() != 3)
-        {
-            ++num_empty_lines;
-            continue;
-        }
-        num_empty_lines = 0;
-
         int opp     = s[0] - 'A';
         int outcome  = s[2] - 'X';
 
