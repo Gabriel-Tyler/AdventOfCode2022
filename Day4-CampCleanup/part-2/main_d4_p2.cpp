@@ -53,8 +53,7 @@ void solve()
         }
         
         // check the boundaries of each range pair to see if they overlap at all
-        if ((range_pair[0][0] <= range_pair[1][0] && range_pair[1][0] <= range_pair[0][1]) ||
-            (range_pair[1][0] <= range_pair[0][0] && range_pair[0][0] <= range_pair[1][1]))
+        if (range_pair[0][0] <= range_pair[1][1] && range_pair[1][0] <= range_pair[0][1])
         {
             ++num_overlaps;
         }
