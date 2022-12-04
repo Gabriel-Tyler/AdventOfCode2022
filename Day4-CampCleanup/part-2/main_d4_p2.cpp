@@ -41,11 +41,11 @@ void solve()
                     range_pair[i][j] = stoll(line.substr(curr), &pos);
                     curr += pos+1;
                 }
-                catch(const invalid_argument& e)
+                catch (const invalid_argument& e)
                 {
                     cout << "invalid_argument::what(): " << e.what() << '\n';
                 }
-                catch(const out_of_range& e)
+                catch (const out_of_range& e)
                 {
                     cout << "out_of_range::what(): " << e.what() << '\n';
                 }
