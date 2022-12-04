@@ -29,7 +29,7 @@ void solve()
         int opp = s[0] - 'A';
         int me  = s[2] - 'X';
 
-        if (opp < 0 || opp > 3 || me < 0 || me > 3)
+        if (opp < 0 || opp > 2 || me < 0 || me > 2)
             // invalid input
             continue; 
 

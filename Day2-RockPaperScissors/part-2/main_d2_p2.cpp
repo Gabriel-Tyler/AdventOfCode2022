@@ -27,9 +27,9 @@ void solve()
     while (getline(cin, s) && s.size() == 3)
     {
         int opp     = s[0] - 'A';
-        int outcome  = s[2] - 'X';
+        int outcome = s[2] - 'X';
 
-        if (opp < 0 || opp > 3 || outcome < 0 || outcome > 3)
+        if (opp < 0 || opp > 2 || outcome < 0 || outcome > 2)
             // invalid input
             continue; 
 
