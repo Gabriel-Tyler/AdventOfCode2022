@@ -18,11 +18,8 @@ void solve()
 {
     int contained = 0;
     string line;
-    while (getline(cin, line))
+    while (getline(cin, line) && !line.empty())
     {
-        if (line.empty())
-            break;
-
         // parse the line into a pair of ranges ([1st/2nd elf][left/right in range])
         ll range_pair[2][2];
 
