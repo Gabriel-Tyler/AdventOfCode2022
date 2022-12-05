@@ -35,9 +35,24 @@ void solve()
         lines.push_back(line);
     }
 
-    // can calculate the number of stacks based on how long the line is 
-    //  -> (n = (sz-1) / 4 + 1)
-    int num_stacks = (line.size()-1)/4+1;
+    // because the stack input is a number of elements of size 3 each separated by a space
+    // and because the line has no leading or trailing whitespace: e.g., "[1] [2]", not "  [1] [2] "
+    // and because we can assume that stacks only contain chars and the stack number is a single digit
+    //
+    //     we can calculate the number of stacks based on how long the line is 
+    //      -> n = (size+1) / 4
+    //
+    // example:
+    //     "[1] [2] [3]" (size = 11)
+    //
+    //     (11+1)/4 = 3 stacks
+    //
+    //     imagine adding a space at the beginning then dividing by 4:
+    //         " [1] [2] [3]" (size=12)
+    //          1   1   1 
+    //           234 234 234
+    //
+    int num_stacks = (line.size()+1)/4;
 
     vector<stack<char>> stacks(num_stacks);
 
@@ -47,6 +62,8 @@ void solve()
     {
         forn (j, num_stacks)
         {
+            // see the above explanation of this calculation
+            //
             // can calculate the index of an element of the stack from the strings array
             //  -> pos = 4*j + 1
             char c = lines[i][4*j+1];
