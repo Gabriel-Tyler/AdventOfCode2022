@@ -69,13 +69,17 @@ void solve()
         istringstream iss(line); 
         iss >> s >> op.num >> s >> op.src >> s >> op.dst;
 
+        // input is 1-indexed, convert to 0-indexed
+        --op.src;
+        --op.dst;
+
         // perform the operation
-        //  -> move the tops one-by-one from src stack dst stack op.num times
+        //  -> move the tops one-by-one from src stack to dst stack op.num times
         forn (i, op.num)
         {
-            char c = stacks[op.src-1].top();
-            stacks[op.src-1].pop();
-            stacks[op.dst-1].push(c);
+            char c = stacks[op.src].top();
+            stacks[op.src].pop();
+            stacks[op.dst].push(c);
         }
     }
 
