@@ -52,7 +52,7 @@ void solve()
     //          1   1   1 
     //           234 234 234
     //
-    int num_stacks = (line.size()-1)/4+1;
+    int num_stacks = (line.size()+1)/4;
 
     vector<stack<char>> stacks(num_stacks);
 
