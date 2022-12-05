@@ -56,7 +56,6 @@ void solve()
         }
     }
 
-
     // ignore the empty line separating the stacks from the operations
     getline(cin, line);
 
