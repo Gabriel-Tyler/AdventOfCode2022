@@ -1,5 +1,7 @@
 # AdventOfCode2022
 
+Day 7 is ugly so I'll redo it in a bit
+
 My solutions 
 
 https://adventofcode.com/2022
