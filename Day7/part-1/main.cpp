@@ -1,5 +1,5 @@
 /**
- * Answer: 8474158
+ * Answer: 1723892
  */
 #include <bits/stdc++.h>
 
@@ -200,18 +200,13 @@ void Solve()
         }
     }
 
-    i64 root_sz = root->Size();
-    i64 smallest = root_sz;
-    i64 free_space = 70'000'000 - root_sz;
+    i64 sum = 0;
     for (Node* dir : all_directories)
     {
-        i64 sz = dir->Size();
-        if (free_space + sz >= 30'000'000)
-        {
-            smallest = min(smallest, sz);
-        }
+        if (dir->Size() <= 100000)
+            sum += dir->Size();
     }
-    cout << smallest << '\n';
+    cout << sum << '\n';
 }
 
 int main()
